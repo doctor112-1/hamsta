@@ -1,0 +1,27 @@
+{
+  "name": "hamsta",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/doctor112-1/hamsta#readme",
+  "bugs": {
+    "url": "https://github.com/doctor112-1/hamsta/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doctor112-1/hamsta.git"
+  },
+  "license": "ISC",
+  "author": "doctor112-1",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

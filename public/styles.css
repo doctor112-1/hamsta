@@ -1,0 +1,62 @@
+.imgHamsta {
+  display: flex;
+  justify-content: center;
+}
+
+.formDiv {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+}
+
+.submitButton {
+  padding: 10px;
+}
+
+input[type=submit] {
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  background-color: lightblue;
+  border: none;
+  color: light-dark;
+  border-radius: 8px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: skyblue;
+}
+
+textarea {
+  font-family: "Noto Sans", sans-serif;
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
