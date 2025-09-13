@@ -24,6 +24,7 @@
   "dependencies": {
     "badwords-list": "^2.0.1-4",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
     "formidable": "^3.5.4",
     "lowdb": "^7.0.1"
   }

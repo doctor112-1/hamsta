@@ -21,7 +21,6 @@ form.addEventListener("submit", async (event) => {
   const result = await sendData()
   let notificationDiv = document.getElementById("notification")
   notificationDiv.innerHTML = ""
-  console.log(result)
   if (result == "posted successfully") {
     notificationDiv.className = "notification"
   } else {
@@ -31,4 +30,20 @@ form.addEventListener("submit", async (event) => {
   text.className = "notificationText"
   let textNode = document.createTextNode(result)
   notificationDiv.appendChild(text).appendChild(textNode)
+})
+
+document.forms.form.elements[0].addEventListener("input", event => {
+  if (document.forms.form.elements[0].value.length < 50) {
+    characterCounter = document.getElementById("characterCounter")
+    characterCounter.innerHTML = ""
+    let text = document.createElement("p")
+    let textNode = document.createTextNode(`${document.forms.form.elements[0].value.length}/50`)
+    characterCounter.appendChild(text).appendChild(textNode)
+  } else {
+    characterCounter = document.getElementById("characterCounter")
+    characterCounter.innerHTML = ""
+    let text = document.createElement("p")
+    let textNode = document.createTextNode(`${document.forms.form.elements[0].value.length}/400`)
+    characterCounter.appendChild(text).appendChild(textNode)
+  }
 })
