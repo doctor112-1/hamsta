@@ -110,7 +110,7 @@ h2 {
 }
 
 .post {
-  border-radius: 25px;
+  border-radius: 15px;
   display: inline-block;
   border: 2px solid black;
   padding: 20px;
@@ -126,4 +126,30 @@ p {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+}
+
+.notificationText {
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.notification {
+  margin: auto;
+  border-radius: 15px;
+  background-color: rgba(0, 204, 0, 0.5);
+  padding: 0.2px;
+  width: 100%;
+}
+
+.notificationError {
+  margin: auto;
+  border-radius: 15px;
+  background-color: rgba(204, 0, 0, 0.5);
+  padding: 0.2px;
+  width: 100%;
 }
