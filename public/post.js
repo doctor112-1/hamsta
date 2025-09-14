@@ -5,7 +5,7 @@ async function sendData() {
   const formData = new FormData(form)
 
   try {
-    const response = await fetch("/postResponse", {
+    const response = await fetch("postResponse", {
       method: "POST",
       body: formData,
     })

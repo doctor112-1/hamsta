@@ -1,5 +1,5 @@
 async function getData() {
-  const url = "/getResponses"
+  const url = "getResponses"
 
   try {
     const response = await fetch(url)
