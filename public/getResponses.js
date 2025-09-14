@@ -23,7 +23,7 @@ if (result.posts.length == 0) {
   noResultsYetText.appendChild(noResultsYetTextNode)
   document.getElementById("posts").appendChild(noResultsYetText)
   let link = document.createElement("a")
-  link.href = "/"
+  link.href = "."
   let button = document.createElement("button")
   button.textContent = "Create post"
   document.getElementById("posts").appendChild(link).appendChild(button)
