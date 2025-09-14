@@ -21,6 +21,8 @@ app.use(express.static('public'))
 
 app.use(express.json())
 
+app.set('trust proxy', 1)
+
 app.use("/postResponse", limiter)
 
 app.get('/getResponses', async (req, res) => {
