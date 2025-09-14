@@ -9,6 +9,9 @@ import 'dotenv/config'
 const limiter = rateLimit({
   windowMs: 10 * 1000,
   limit: 1,
+  standardHeaders: true,
+  legacyHeaders: false,
+  ipv6Subnet: 56,
 })
 
 const defaultData = { posts: [] }
