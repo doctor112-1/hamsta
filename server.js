@@ -4,6 +4,7 @@ import formidable, { errors as formidableErrors } from 'formidable';
 import * as badwords from "badwords-list"
 import { rateLimit } from 'express-rate-limit'
 import * as gibberish from "./gibberishWrapper.cjs"
+import 'dotenv/config'
 
 const limiter = rateLimit({
   windowMs: 10 * 1000,
@@ -14,7 +15,7 @@ const defaultData = { posts: [] }
 const db = await JSONFilePreset('db.json', defaultData)
 
 const app = express()
-const port = 3000
+const port = process.env.PORT
 
 app.use(express.static('public'))
 
