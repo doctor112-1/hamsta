@@ -3,6 +3,7 @@ import { JSONFilePreset } from 'lowdb/node'
 import formidable, { errors as formidableErrors } from 'formidable';
 import * as badwords from "badwords-list"
 import { rateLimit } from 'express-rate-limit'
+import * as gibberish from "./gibberishWrapper.cjs"
 
 const limiter = rateLimit({
   windowMs: 10 * 1000,
@@ -19,7 +20,7 @@ app.use(express.static('public'))
 
 app.use(express.json())
 
-app.use(limiter)
+app.use("/postResponse", limiter)
 
 app.get('/getResponses', async (req, res) => {
   await db.read()
@@ -37,19 +38,23 @@ app.post('/postResponse', async (req, res) => {
   }
 
   let badWordsDetected = false
+  let badWord;
 
   for (let i = 0; i < badwords.array.length; i++) {
     if (fields.response[0].includes(badwords.array[i])) {
       badWordsDetected = true
+      badWord = badwords.array[i]
       break
     }
   }
 
   try {
     if (badWordsDetected) {
-      res.send("no bad words")
+      res.send(`no bad words, detected: ${badWord}`)
     } else if (fields.response[0].length < 50) {
       res.send("please write more than 50 characters")
+    } else if (gibberish.gibberishWrapper(fields.response[0])) {
+      res.send("detected gibberish please do not write gibberish")
     } else {
       await db.update(({ posts }) => posts.push(fields.response[0]))
       res.send("posted successfully")
