@@ -11,7 +11,7 @@ const limiter = rateLimit({
   limit: 1,
   standardHeaders: 'draft-8',
   legacyHeaders: false,
-  ipv6Subnet: 56,
+  ipv6Subnet: 56
 })
 
 const defaultData = { posts: [] }
